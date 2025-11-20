@@ -1,6 +1,0 @@
-streamlit
-rembg==2.0.28
-onnxruntime
-opencv-python-headless
-Pillow
-numpy
