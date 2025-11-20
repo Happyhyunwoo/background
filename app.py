@@ -111,7 +111,6 @@ HERO_SVG = """
 def remove_background(image: Image.Image) -> Image.Image:
     """
     rembg를 이용해 배경을 제거하는 함수.
-    별도 예외처리를 한 번 더 감싸서 에러 메시지를 정리해 보여줍니다.
     """
     return remove(image)
 
@@ -129,20 +128,20 @@ def main():
     with st.sidebar:
         st.markdown("### ✨ 사용 팁")
         st.write(
-            "1. 배경과 피사물이 **색이 확연히 다른 사진**일수록 결과가 더 깔끔합니다.\n"
-            "2. 결과 이미지는 항상 **투명 배경의 PNG**로 제공됩니다.\n"
-            "3. 프레젠테이션, 썸네일, 포트폴리오 등 어디든 바로 붙여 넣을 수 있습니다."
+            "1. 배경과 피사물이 색 대비가 확실한 사진일수록 결과가 깔끔합니다.\n"
+            "2. 결과 이미지는 항상 투명 배경의 PNG로 저장됩니다.\n"
+            "3. 프레젠테이션, 썸네일, 포트폴리오 등에 바로 사용할 수 있습니다."
         )
         st.markdown("---")
-        st.markdown("#### ℹ️ 주의 사항")
+        st.markdown("#### ℹ️ 안내")
         st.write(
-            "사진의 복잡도, 해상도에 따라 처리 시간이 조금 늘어날 수 있습니다. "
+            "사진의 복잡도와 해상도에 따라 처리 시간이 늘어날 수 있습니다. "
             "너무 큰 이미지는 업로드 전에 크기를 적당히 줄여 주세요."
         )
 
     # ====== 헤더 ======
     st.markdown(HERO_SVG, unsafe_allow_html=True)
-    st.markmarkown(
+    st.markdown(
         "<h1 style='text-align:center; margin-bottom:0.3rem;'>"
         "Image Background Remover</h1>",
         unsafe_allow_html=True,
@@ -204,7 +203,7 @@ def main():
 
             st.markdown("<br>", unsafe_allow_html=True)
             st.markdown(
-                '<div class="section-title">2. 원본 vs 결과 비교</div>',
+                '<div class="section-title">2. 원본과 결과 비교</div>',
                 unsafe_allow_html=True,
             )
             st.markdown(
@@ -237,10 +236,7 @@ def main():
 
             # 결과 다운로드 영역
             st.markdown("<br>", unsafe_allow_html=True)
-            st.markdown(
-                '<div class="result-card">',
-                unsafe_allow_html=True,
-            )
+            st.markdown('<div class="result-card">', unsafe_allow_html=True)
             st.markdown(
                 '<div class="section-title">3. 결과 이미지 다운로드</div>',
                 unsafe_allow_html=True,
@@ -248,7 +244,7 @@ def main():
             st.markdown(
                 '<p class="helper-text">'
                 "배경이 투명한 PNG 형식으로 저장됩니다. "
-                "파일명을 바꿔서 저장해도 괜찮습니다."
+                "파일명은 자유롭게 변경해 저장해도 괜찮습니다."
                 "</p>",
                 unsafe_allow_html=True,
             )
